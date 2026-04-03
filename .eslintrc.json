@@ -21,6 +21,13 @@
         "varsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_"
       }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Program:has(CallExpression[callee.property.name='addEventListener']):not(:has(CallExpression[callee.object.name='window'][callee.property.name='addCleanup']))",
+        "message": "addEventListener should be paired with window.addCleanup() for proper SPA cleanup. See ARCHITECTURE.md for details."
+      }
     ]
   },
   "overrides": [
