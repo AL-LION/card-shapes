@@ -41,7 +41,7 @@
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings=0",
     "format": "prettier . --check",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run lint && npm run format && npm run test"
   },

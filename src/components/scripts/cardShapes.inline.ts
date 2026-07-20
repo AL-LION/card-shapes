@@ -10,24 +10,18 @@ function applyCardShapes() {
         ?.textContent?.trim()
         .toLowerCase();
 
-      if (label !== "card-shape") continue;
+      if (label !== "card-shape") {
+        continue;
+      }
 
       const shape = row
         .querySelector<HTMLElement>(".bases-card-value .bases-text")
         ?.textContent?.trim()
         .toLowerCase();
 
-      card.classList.remove(
-        "card-shape-landscape",
-        "card-shape-portrait",
-        "card-shape-square",
-      );
+      card.classList.remove("card-shape-landscape", "card-shape-portrait", "card-shape-square");
 
-      if (
-        shape === "landscape" ||
-        shape === "portrait" ||
-        shape === "square"
-      ) {
+      if (shape === "landscape" || shape === "portrait" || shape === "square") {
         card.classList.add(`card-shape-${shape}`);
       }
 
@@ -37,3 +31,7 @@ function applyCardShapes() {
 }
 
 document.addEventListener("nav", applyCardShapes);
+
+window.addCleanup(() => {
+  document.removeEventListener("nav", applyCardShapes);
+});

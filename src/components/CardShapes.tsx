@@ -1,11 +1,8 @@
-import type {
-  QuartzComponent,
-  QuartzComponentConstructor,
-} from "@quartz-community/types";
+import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-community/types";
 
 import style from "./styles/cardShapes.scss";
 
-// @ts-ignore - inline script import handled by Quartz bundler
+// @ts-expect-error - inline script import handled by Quartz bundler
 import script from "./scripts/cardShapes.inline.ts";
 
 export default (() => {
