@@ -43,6 +43,10 @@ function applyCardShapes() {
   }
 }
 
+// Apply immediately on the current page.
+applyCardShapes();
+
+// Reapply after Quartz 5 SPA navigation.
 document.addEventListener("nav", applyCardShapes);
 
 window.addCleanup(() => {
