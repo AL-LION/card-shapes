@@ -1,0 +1,13 @@
+/* Card shape styles will go here. */
+
+.bases-card.card-shape-landscape .bases-card-image {
+  aspect-ratio: 16 / 9 !important;
+}
+
+.bases-card.card-shape-portrait .bases-card-image {
+  aspect-ratio: 3 / 4 !important;
+}
+
+.bases-card.card-shape-square .bases-card-image {
+  aspect-ratio: 1 / 1 !important;
+}
