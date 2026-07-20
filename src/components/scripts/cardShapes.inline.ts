@@ -10,22 +10,35 @@ function applyCardShapes() {
         ?.textContent?.trim()
         .toLowerCase();
 
-      if (label !== "card-shape") {
+      if (label === "card-shape") {
+        const shape = row
+          .querySelector<HTMLElement>(".bases-card-value .bases-text")
+          ?.textContent?.trim()
+          .toLowerCase();
+
+        card.classList.remove("card-shape-landscape", "card-shape-portrait", "card-shape-square");
+
+        if (shape === "landscape" || shape === "portrait" || shape === "square") {
+          card.classList.add(`card-shape-${shape}`);
+        }
+
+        row.hidden = true;
         continue;
       }
 
-      const shape = row
-        .querySelector<HTMLElement>(".bases-card-value .bases-text")
-        ?.textContent?.trim()
-        .toLowerCase();
+      if (label === "tags") {
+        row.classList.add("card-tags-row");
 
-      card.classList.remove("card-shape-landscape", "card-shape-portrait", "card-shape-square");
+        const tagValues = row.querySelectorAll<HTMLElement>(".bases-text");
 
-      if (shape === "landscape" || shape === "portrait" || shape === "square") {
-        card.classList.add(`card-shape-${shape}`);
+        for (const tag of tagValues) {
+          const text = tag.textContent?.trim();
+
+          if (text && !text.startsWith("#")) {
+            tag.textContent = `#${text}`;
+          }
+        }
       }
-
-      row.hidden = true;
     }
   }
 }

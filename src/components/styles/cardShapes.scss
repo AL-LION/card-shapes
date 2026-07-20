@@ -1,4 +1,21 @@
-/* Card shape styles will go here. */
+.bases-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.bases-card-body {
+  background: transparent !important;
+  padding: 0.75rem 0 0 !important;
+}
+
+.bases-card-title {
+  display: none !important;
+}
+
+.bases-card-row[hidden] {
+  display: none !important;
+}
 
 .bases-card.card-shape-landscape .bases-card-image {
   aspect-ratio: 16 / 9 !important;
@@ -10,4 +27,23 @@
 
 .bases-card.card-shape-square .bases-card-image {
   aspect-ratio: 1 / 1 !important;
+}
+
+.card-tags-row {
+  display: block !important;
+}
+
+.card-tags-row .bases-card-label {
+  display: none !important;
+}
+
+.card-tags-row .bases-card-value,
+.card-tags-row .bases-list {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.card-tags-row .bases-text {
+  font-size: 0.9rem;
 }
