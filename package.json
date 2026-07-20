@@ -1,28 +1,21 @@
 {
-  "name": "@quartz-community/plugin-template",
+  "name": "card-shapes",
   "version": "0.1.0",
-  "description": "Template repository for Quartz community plugins.",
+  "description": "adds custom landscape, portrait, and square aspect ratios to quartz bases cards.",
   "type": "module",
-  "license": "MIT",
-  "author": "Quartz Community",
-  "homepage": "https://quartz.jzhao.xyz",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/quartz-community/plugin-template"
-  },
+  "license": "UNLICENSED",
+  "author": "AL-LION",
   "keywords": [
     "quartz",
     "quartz-plugin",
-    "plugin-template",
-    "remark",
-    "rehype",
-    "mdast",
-    "hast"
+    "quartz-component",
+    "bases",
+    "cards",
+    "aspect-ratio"
   ],
   "files": [
     "dist",
     "README.md",
-    "LICENSE",
     "CHANGELOG.md"
   ],
   "exports": {
@@ -94,29 +87,21 @@
     "vitest": "^2.1.9"
   },
   "quartz": {
-    "name": "plugin-template",
-    "displayName": "Plugin Template",
-    "category": "transformer",
+    "name": "card-shapes",
+    "displayName": "Card Shapes",
+    "category": [
+      "component"
+    ],
     "version": "1.0.0",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],
     "defaultOrder": 50,
     "defaultEnabled": true,
     "defaultOptions": {},
-    "optionSchema": {
-      "highlightToken": {
-        "type": "enum",
-        "values": [
-          "==",
-          "**",
-          "~~"
-        ]
-      }
-    },
     "components": {
-      "ExampleComponent": {
-        "displayName": "Example Component",
-        "defaultPosition": "right",
+      "CardShapes": {
+        "displayName": "Card Shapes",
+        "defaultPosition": "afterBody",
         "defaultPriority": 50
       }
     }
